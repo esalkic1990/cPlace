@@ -1,0 +1,63 @@
+<div class="container-fluid fadeIn animated">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default overview-panel">
+
+                <h3>Overview Panel:</h3>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="panel panel-default  info-panel">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">{{taskCount}}</span>
+                        Total number of tasks:
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#/task">Show all tasks</a>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">Last added tasks:(click to see details and edit)</div>
+
+                <ul class="list-group task">
+                    <li class="list-group-item" ng-click='openTaskOvewViewEdit(task);' ng-repeat="task in allTasks| filter:searchTask">
+                        <div class="row">
+                            <div class="col-md-6">Task: <span data-toggle="modal" data-target="#taskModal" style="font-weight: bold;">{{task.nameTask}}</span></div>
+                            <div class="col-md-6"><div class="progress"> <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{task.percentage}}%;">
+                                        {{task.percentage}}%</div></div>
+                            </div>
+
+                        </div>
+
+
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+
+

@@ -1,0 +1,93 @@
+<div class="container-fluid fadeIn animated user">
+    <div class="row">
+        <div class="col-md-6"> 
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="custom-panel-input">
+                        <h3>Add a new user:<h3>
+                                </div>
+                                <div class="input-group custom-panel-input">
+
+                                    <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="newUser.name" >
+                                </div>
+
+                                <div class="input-group custom-panel-input"> 
+                                    <input type="text" class="form-control" placeholder="Surname" aria-describedby="basic-addon1" ng-model="newUser.surname" >
+                                </div>
+                                <div class="input-group custom-panel-input"> 
+
+                                    <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1" ng-model="newUser.email" >
+                                </div>
+
+                                <div class="btn-group custom-panel-button" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-primary" ng-click="addUser();">Add user</button>
+                                </div>
+
+
+                                </div>
+                                </div>
+                                </div>
+
+                                <div class="col-md-6"> 
+                                    <div class="panel panel-default panel-user2">
+                                        <div class="panel-body">
+
+                                            <div class="panel">
+                                                <h4>Total active users: {{allUsersArraySize}}<h3>
+
+                                                        </div>
+                                                        <div class="panel">
+
+
+                                                            <h4>Last added user:<h4>
+                                                                    <h3>{{lastAddedUser.name}} {{lastAddedUser.surname}}<h3>
+
+                                                        </div>
+
+
+
+                                           </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                 <div class="row">
+                                       <div class="col-lg-12">
+                                            <div class="panel panel-default listOfAllUsers-panel">
+                                                  <div class="panel-heading">List of users(click to see asigned tasks):
+                                                    <input style="width: 40%;" type="text" class="form-control" placeholder="Search" ng-model="searchUser">
+                                                   </div>
+                                               <div class="panel-body">
+
+                                                             <ul class="list-group userTasks">
+                                                         <li class="list-group-item fadeInRight animated" ng-click="isCollapsed = !isCollapsed;
+                                                                                                            getUserTasks(user.id);" ng-repeat="(key, user) in allUsers | filter:searchUser"><span style='font-weight: bold;'>{{key + 1}}.</span><span class="userInfoList">{{user.name}} {{user.surname}}</span>
+                                                     <div style="padding-top: 10px;" uib-collapse="isCollapsed">
+
+                                                     <label>Tasks:</label>
+                                                   <ul class="list-group" style="padding-top: 10px;">
+                                                     <li ng-repeat=" (key, task) in userTaskArray" class="list-group-item">{{key + 1}}. {{task.nameTask}} <span id='percentageTask'>{{task.percentage}}%<span></li>
+
+                                                             </ul>
+                                                        </div>
+
+                                                    </li>
+                                                </ul>
+
+
+
+                                            </div>
+                                      </div>
+
+
+
+                                  </div>
+                            </div>
+
+
+
+                    </div>
+
+
+

@@ -1,0 +1,133 @@
+/* app css stylesheet */
+
+
+/*.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}*/
+
+.custom-panel-input{
+    
+        width: 50%;
+    margin:auto;
+   // display: block;
+    
+    
+}
+.custom-panel-button{
+    
+    width: 50%;
+    margin: auto;
+    display: block;
+    padding-top: 10px;
+    
+    
+}
+.panel-user2{
+    min-height: 242px;
+    
+    
+}
+.listOfAllUsers-panel span:nth-child(2){
+    
+   // font-weight: bold;
+    //float: right;
+    
+}
+.task li:hover{
+    
+    cursor: pointer;
+    
+    
+}
+.taskEditPanel label{
+    
+    font-weight: bold;
+    
+}
+.taskEditPanel label:nth-child(5){
+    
+    font-weight: normal;
+    
+}
+
+.info-panel{
+    
+    min-height: 400px;
+    
+    
+}
+
+.userInfoList{
+    
+    font-weight: bold;
+    font-size: 14px;
+    
+}
+
+.spanName {
+    color: #00b3ee;
+    
+    
+    
+}
+
+#percentageEdit{
+    
+    padding-top: 10px;
+    
+    
+}
+.overview-panel h3 {
+    padding:10px;
+    
+    
+}
+
+.list-group li:hover {
+    
+     cursor: pointer;
+    
+}
+
+.userTasks .list-group li {
+    
+    background: #337ab7;
+    color: white;
+    
+}
+.userTasks .list-group li:nth-child(2n+1){
+    background: white;
+     color: #337ab7;
+    
+    
+}
+.userTasks #percentageTask {
+    
+    float: right;
+    
+}

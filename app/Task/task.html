@@ -1,0 +1,156 @@
+<div class="container-fluid fadeIn animated task">
+    <div class="row">
+
+        <div class="col-lg-12"> 
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="custom-panel-input">
+                        <h3>Add a new task:<h3>
+                                </div>
+                                <div class="input-group custom-panel-input">
+
+                                    <input type="text" class="form-control" placeholder="Name of task" aria-describedby="basic-addon1" ng-model="newTask.nameTask"  >
+                                </div>
+
+                                <div class="input-group custom-panel-input"> 
+
+                                    <textarea class="form-control" placeholder="Description" rows="5" id="comment" ng-model="newTask.description"></textarea>
+                                </div>
+                                <div class="input-group custom-panel-input">
+
+                                    <label>Assigniee:</label>
+
+                                    <select class="form-control" ng-model="newTask.user" ng-options="user.name +' '+ user.surname for user in allUsers">
+                                        <option value="">-- Choose a user --</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="form-group custom-panel-input">
+                                    <label>Percentage done:</label>
+                                    <select ng-model="newTask.percentage" class="form-control" id="sel1">
+                                        <option ng-repeat='n in percentage'>{{n}}</option>
+
+                                    </select>
+                                </div>
+
+
+
+                                <div class="btn-group custom-panel-button" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-primary" ng-click="addTask();">Add task</button>
+                                </div>
+
+
+                                </div>
+                                </div>
+                                </div>
+
+
+
+                                </div>
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="panel panel-default ">
+                                            <div class="panel-heading">List of tasks:(click to see details)
+
+                                            </div>
+                                            <div class="panel-body">
+
+                                                <ul class="list-group">
+                                                    <li class="list-group-item" ng-click='getTaskForModal(task);' 
+                                                        ng-repeat="task in allTasks| filter:searchTask"><div class="row"><div class="col-md-10"Name of task: <span data-toggle="modal" data-target="#taskModal" style="font-weight: bold;">{{task.nameTask}}</span></div>
+                                                            <div class="col-md-2">
+                                                                <button type="button" data-toggle="modal" data-target="#taskModalDelete" class="btn btn-danger">Delete</button>
+                                                            </div></div>
+
+
+                                                    </li>
+                                                </ul>
+
+
+
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+
+                                </div>
+
+
+                                <div id="taskModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">{{selectedTaskModal.nameTask}}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>{{selectedTaskModal.description}}</p>
+                                                <p>Assignee:<span style="font-weight: bold;" ng-repeat="userdata in selectedTaskModal">{{ userdata.name}} {{userdata.surname}}</span></p>
+                                            </div>
+                                            <div class="modal-footer">
+
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div id="taskModalDelete" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">delete</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Are you sure you want to delete the task ?</p>
+                                            </div>
+                                            <div class="modal-footer"> 
+
+                                                <button ng-click="deteteSelectedTask(task);" type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div id="taskModalEdit" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">edit</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                edit
+                                            </div>
+                                            <div class="modal-footer">
+
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
